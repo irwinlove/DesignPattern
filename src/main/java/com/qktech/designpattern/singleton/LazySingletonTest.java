@@ -1,4 +1,4 @@
-package com.qktech.designpattern.lazysingleton;
+package com.qktech.designpattern.singleton;
 
 /**
  * @Author irwin
@@ -16,15 +16,16 @@ public class LazySingletonTest {
             System.out.println(instance);
         }).start();
         new Thread(()->{
-            LazySingleton instance1 = LazySingleton.getInstance();
-            System.out.println(instance1);
+            LazySingleton instance = LazySingleton.getInstance();
+            System.out.println(instance);
         }).start();
     }
 }
 
-class  LazySingleton {
-    private static volatile LazySingleton instance;
 
+class  LazySingleton {
+    //lazy单例模式，延迟加载，只有真正使用的时候，才开始实例化
+    private static volatile LazySingleton instance;
     private LazySingleton() {
     }
 

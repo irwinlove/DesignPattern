@@ -1,4 +1,4 @@
-package com.qktech.designpattern.lazysingleton;
+package com.qktech.designpattern.singleton;
 
 /*
  * @Author irwin
